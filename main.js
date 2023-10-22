@@ -1,20 +1,20 @@
-const enterytime = parseInt(prompt('Please Enter the Reminder Time :'))
+const entryTime = parseInt(prompt('Please Enter the Reminder Time:'));
 
-if(!isNaN(enterytime)) {
+if (!isNaN(entryTime)) {
+  let timeReminder = entryTime;
 
-  let timereminder = enterytime
-
-  function reminder() {
-    if(timereminder>0) {
-      console.log(`${timereminder} Seconds Left`)
-      timereminder -= 1
-      setTimeout(reminder, 1000)
+  const reminder = () => {
+    if (timeReminder > 0) {
+      console.log(`${timeReminder} Seconds Left`);
+      timeReminder -= 1;
+      setTimeout(reminder, 1000);
     } else {
-            console.log('Time is Up')
+      console.log('Time is Up');
     }
-    }  
+  };
+
+  reminder();
 } else {
-    alert('Please Enter a number between 1 - 1000')
+  alert('Please Enter a number between 1 - 1000');
 }
 
-reminder();
